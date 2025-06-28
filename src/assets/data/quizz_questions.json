@@ -46,6 +46,14 @@
         {"id": 1, "name":"O Terrivel", "alias":"A"},
         {"id": 2, "name":"Amigo da vizinhança", "alias":"B"}
       ]
+    },
+    {
+      "id":6,
+      "question": "O que você prefere ?",
+      "options":[
+        {"id": 1, "name":"Ser temido pelo seu rastro de destruição", "alias":"A"},
+        {"id": 2, "name":"Ser amado por ajudar pessoas", "alias":"B"}
+      ]
     }
   ],
   "results":{
