@@ -9,7 +9,8 @@
       <h3>{{questionSelected.question}}</h3>
   </div>
 
-  <div *ngIf=!finished  class="quizz_options">
+  <div *ngIf=!finished [ngClass]="fadeClass" (animationend)="onFadeDone()"
+ class="quizz_options">
 
     <button
       *ngFor="let option of questionSelected.options; let i = index"
@@ -21,7 +22,7 @@
 
   </div>
 
-  <div *ngIf=finished class="quizz_results">
+  <div *ngIf=finished [ngClass]="fadeClass" (animationend)="onFadeDone()" class="quizz_results">
     <h1>O Seu resultado é:</h1>
     <p>{{answerSelected}}</p>
   </div>

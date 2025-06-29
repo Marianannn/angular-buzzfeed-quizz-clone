@@ -21,6 +21,7 @@ export class QuizzComponent implements OnInit {
   questionMaxIndex:number=0
 
   finished:boolean = false
+  fadeClass: string = 'fade-in';
 
   constructor() { }
 
@@ -34,6 +35,7 @@ export class QuizzComponent implements OnInit {
 
       this.questionIndex = 0
       this.questionMaxIndex = this.questions.length
+      console.log(this.fadeClass)
 
       console.log(this.questionIndex)
       console.log(this.questionMaxIndex)
@@ -43,11 +45,19 @@ export class QuizzComponent implements OnInit {
 
   playerChoose(value:string){
     this.answers.push(value)
+    this.fadeClass = 'fade-out';
     this.nextStep()
 
   }
 
+    onFadeDone() {
+    if (this.fadeClass === 'fade-out') {
+      this.fadeClass = 'fade-in';
+    }
+  }
+
   async nextStep(){
+    
     this.questionIndex+=1
 
     if(this.questionMaxIndex > this.questionIndex){
